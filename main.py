@@ -7,7 +7,7 @@ import tensorflow as tf
 from flearn.utils.model_utils import read_data
 
 # GLOBAL PARAMETERS
-OPTIMIZERS = ['fedsgd', 'fedavg', 'finetuning',
+OPTIMIZERS = ['fedavgper','fedsgd', 'fedavg', 'finetuning',
               'l2sgd', 'ditto', 'ewc', 'apfl', 'mapper', 'kl', 'meta']
 DATASETS = ['vehicle', 'femnist', 'fmnist', 'celeba']   # fmnist: fashion mnist 
 
@@ -174,7 +174,7 @@ def read_options():
     learner = getattr(mod, 'Model')
 
     # load selected trainer
-    if parsed['optimizer'] in ['l2sgd', 'ditto', 'apfl', 'mapper', 'ewc', 'meta', 'kl']:
+    if parsed['optimizer'] in ['fedavgper','l2sgd', 'ditto', 'apfl', 'mapper', 'ewc', 'meta', 'kl']:
         opt_path = 'flearn.trainers_MTL.%s' % parsed['optimizer']
     else:
         opt_path = 'flearn.trainers_global.%s' % parsed['optimizer']
