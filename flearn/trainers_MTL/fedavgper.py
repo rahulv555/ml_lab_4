@@ -193,7 +193,7 @@ class Server(BaseFedarated):
             print('\nNow for all clients\n')
 
 
-            for idx in self.clients:
+            for idx in range(len(self.clients)):
                 w_global_idx = copy.deepcopy(self.global_model)
                 c = self.clients[idx]
                 for _ in range(self.local_iters):
