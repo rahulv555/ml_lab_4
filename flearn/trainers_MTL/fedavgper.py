@@ -190,7 +190,7 @@ class Server(BaseFedarated):
             # for layer in range(len(avg_updates)):
             #     self.global_model[layer] += avg_updates[layer]
 
-            print('\nNow for all clients\n')
+            # print('\nNow for all clients\n')
 
 
             for idx in range(len(self.clients)):
